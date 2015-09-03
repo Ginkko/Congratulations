@@ -41,6 +41,7 @@ public class PresentOpen : MonoBehaviour {
 				confetti.emissionRate = 75f;
 				confetti2.emissionRate = 75f;
 				congrats.SetActive(true);
+				balloon.SetActive(true);
 				balloon.GetComponent<moveBalloon>().StartMove ();
 				if (!opened)
 				{
