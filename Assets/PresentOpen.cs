@@ -27,7 +27,40 @@ public class PresentOpen : MonoBehaviour {
 		startingRotation = transform;
 		audio = GetComponent<AudioSource> ();
 	}
-	
+
+	public void pointerClick()	
+	{
+		isOpen = !isOpen;
+		Debug.Log ("pointer enter");
+		openAction ();
+	}
+
+	private void openAction ()
+	{
+		if (isOpen) {
+			confetti.emissionRate = 75f;
+			confetti2.emissionRate = 75f;
+			congrats.SetActive(true);
+			balloon.SetActive(true);
+			balloon.GetComponent<moveBalloon>().StartMove ();
+			if (!opened)
+			{
+				audio.PlayOneShot(birthday, 1f);
+				opened = true;
+				Debug.Log("opened = " + opened);
+				timer = 0;
+				explosion.GetComponent<ExplosionMat>()._alpha = 1;
+				
+			}
+		}
+		else 
+		{
+			confetti.emissionRate = 0f;
+			confetti2.emissionRate = 0f;
+			explosion.SetActive (false);
+		}
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -36,33 +69,7 @@ public class PresentOpen : MonoBehaviour {
 		if (Input.GetKeyDown ("space")) {
 			isOpen = !isOpen;
 			Debug.Log ("isOpen = " + isOpen);
-
-			if (isOpen) {
-				confetti.emissionRate = 75f;
-				confetti2.emissionRate = 75f;
-				congrats.SetActive(true);
-				balloon.SetActive(true);
-				balloon.GetComponent<moveBalloon>().StartMove ();
-				if (!opened)
-				{
-					audio.PlayOneShot(birthday, 1f);
-					opened = true;
-					Debug.Log("opened = " + opened);
-					timer = 0;
-					explosion.GetComponent<ExplosionMat>()._alpha = 1;
-
-				}
-			}
-			else 
-			{
-				confetti.emissionRate = 0f;
-				confetti2.emissionRate = 0f;
-				explosion.SetActive (false);
-			}
-
-
-
-
+			openAction ();
 		}
 
 		if (timer > 10) {
