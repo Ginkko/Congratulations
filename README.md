@@ -10,6 +10,6 @@ Congratulations is a VR enabled animated scene built in unity for Google Cardboa
 MIT License
 
 #Screen Shots
-![alt tag](IMG/screen1.png)
+![alt tag](img/screen1.png)
 <hr>
-![alt tag](IMG/screen2.png)
+![alt tag](img/screen2.png)
