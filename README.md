@@ -1,6 +1,6 @@
 #Congratulations!
 
-Congratulations is a VR enabled animated scene built in unity for the Oculus Rift.
+Congratulations is a VR enabled animated scene built in unity for Google Cardboard and Oculus Rift.
 
 #Build Instructions
 - Clone repo
@@ -8,3 +8,8 @@ Congratulations is a VR enabled animated scene built in unity for the Oculus Rif
 - Build to your platform of choice
 
 MIT License
+
+#Screen Shots
+![alt tag](IMG/screen1.png)
+<hr>
+![alt tag](IMG/screen2.png)
